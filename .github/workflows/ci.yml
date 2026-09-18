@@ -6,52 +6,52 @@ jobs:
   changes:
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 5 && echo "detect changed paths (real: 30s)"
+      - run: sleep 5 && echo "detect changed paths (real 30s)"
 
   test-php:
     runs-on: ubuntu-latest
     needs: changes
     steps:
-      - run: sleep 5 && echo "php unit tests (real: 30s)"
+      - run: sleep 5 && echo "php unit tests (real 30s)"
 
   type-check:
     runs-on: ubuntu-latest
     needs: changes
     steps:
-      - run: sleep 13 && echo "type check (real: 2.5min)"
+      - run: sleep 13 && echo "type check (real 2.5min)"
 
   test:
     runs-on: ubuntu-latest
     needs: changes
     steps:
-      - run: sleep 28 && echo "test - api (real: 5.5min)"
+      - run: sleep 28 && echo "test - api (real 5.5min)"
 
   test-web:
     runs-on: ubuntu-latest
     needs: changes
     steps:
-      - run: sleep 18 && echo "test - web (real: 3.5min)"
+      - run: sleep 18 && echo "test - web (real 3.5min)"
 
   lint:
     runs-on: ubuntu-latest
     needs: changes
     steps:
-      - run: sleep 28 && echo "lint (real: 5.5min)"
+      - run: sleep 28 && echo "lint (real 5.5min)"
 
   build:
     runs-on: ubuntu-latest
     needs: changes
     steps:
-      - run: sleep 10 && echo "build (real: 2min)"
+      - run: sleep 10 && echo "build (real 2min)"
 
   docker-build-smoke:
     runs-on: ubuntu-latest
     needs: changes
     steps:
-      - run: sleep 20 && echo "docker build smoke (real: 4min)"
+      - run: sleep 20 && echo "docker build smoke (real 4min)"
 
   test-integration:
     runs-on: ubuntu-latest
     needs: changes
     steps:
-      - run: sleep 180 && echo "integration tests (real: 34min) - the long pole"
+      - run: sleep 180 && echo "integration tests (real 34min) - the long pole"
